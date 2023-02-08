@@ -1,0 +1,298 @@
+{
+  "api": {
+    "name": "UDPPlugin",
+    "slug": "udpplugin",
+    "docs": "",
+    "tags": [],
+    "methods": [
+      {
+        "name": "create",
+        "signature": "(options?: { properties?: { name?: string | undefined; bufferSize?: number | undefined; } | undefined; } | undefined) => Promise<{ socketId: number; ipv4: string; ipv6: string; }>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ properties?: { name?: string | undefined; bufferSize?: number | undefined; } | undefined; } | undefined"
+          }
+        ],
+        "returns": "Promise<{ socketId: number; ipv4: string; ipv6: string; }>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "create"
+      },
+      {
+        "name": "update",
+        "signature": "(options: { socketId: number; properties: { name?: string; bufferSize?: number; }; }) => Promise<any>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ socketId: number; properties: { name?: string | undefined; bufferSize?: number | undefined; }; }"
+          }
+        ],
+        "returns": "Promise<any>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "update"
+      },
+      {
+        "name": "setPaused",
+        "signature": "(options: { socketId: number; paused: boolean; }) => Promise<any>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ socketId: number; paused: boolean; }"
+          }
+        ],
+        "returns": "Promise<any>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "setpaused"
+      },
+      {
+        "name": "bind",
+        "signature": "(options: { socketId: number; address: string; port: number; }) => Promise<any>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ socketId: number; address: string; port: number; }"
+          }
+        ],
+        "returns": "Promise<any>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "bind"
+      },
+      {
+        "name": "send",
+        "signature": "(options: { socketId: number; address: string; port: number; buffer: string; }) => Promise<any>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ socketId: number; address: string; port: number; buffer: string; }"
+          }
+        ],
+        "returns": "Promise<any>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "send"
+      },
+      {
+        "name": "closeAllSockets",
+        "signature": "() => Promise<any>",
+        "parameters": [],
+        "returns": "Promise<any>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "closeallsockets"
+      },
+      {
+        "name": "close",
+        "signature": "(options: { socketId: number; }) => Promise<any>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ socketId: number; }"
+          }
+        ],
+        "returns": "Promise<any>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "close"
+      },
+      {
+        "name": "getInfo",
+        "signature": "(options: { socketId: number; }) => Promise<{ socketId: number; bufferSize: number; name: string | null; paused: boolean; localAddress?: string; localPort?: number; }>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ socketId: number; }"
+          }
+        ],
+        "returns": "Promise<{ socketId: number; bufferSize: number; name: string | null; paused: boolean; localAddress?: string | undefined; localPort?: number | undefined; }>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "getinfo"
+      },
+      {
+        "name": "getSockets",
+        "signature": "() => Promise<{ sockets: [ { socketId: number; bufferSize: number; name: string | null; paused: boolean; localAddress?: string; localPort?: number; } ]; }>",
+        "parameters": [],
+        "returns": "Promise<{ sockets: [{ socketId: number; bufferSize: number; name: string | null; paused: boolean; localAddress?: string | undefined; localPort?: number | undefined; }]; }>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "getsockets"
+      },
+      {
+        "name": "joinGroup",
+        "signature": "(options: { socketId: number; address: string; }) => Promise<any>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ socketId: number; address: string; }"
+          }
+        ],
+        "returns": "Promise<any>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "joingroup"
+      },
+      {
+        "name": "leaveGroup",
+        "signature": "(options: { socketId: number; address: string; }) => Promise<any>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ socketId: number; address: string; }"
+          }
+        ],
+        "returns": "Promise<any>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "leavegroup"
+      },
+      {
+        "name": "setMulticastTimeToLive",
+        "signature": "(options: { socketId: number; ttl: number; }) => Promise<any>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ socketId: number; ttl: number; }"
+          }
+        ],
+        "returns": "Promise<any>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "setmulticasttimetolive"
+      },
+      {
+        "name": "setBroadcast",
+        "signature": "(options: { socketId: number; enabled: boolean; }) => Promise<any>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ socketId: number; enabled: boolean; }"
+          }
+        ],
+        "returns": "Promise<any>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "setbroadcast"
+      },
+      {
+        "name": "setMulticastLoopbackMode",
+        "signature": "(options: { socketId: number; enabled: boolean; }) => Promise<any>",
+        "parameters": [
+          {
+            "name": "options",
+            "docs": "",
+            "type": "{ socketId: number; enabled: boolean; }"
+          }
+        ],
+        "returns": "Promise<any>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "setmulticastloopbackmode"
+      },
+      {
+        "name": "getJoinedGroups",
+        "signature": "() => Promise<{ groups: [string]; }>",
+        "parameters": [],
+        "returns": "Promise<{ groups: [string]; }>",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [],
+        "slug": "getjoinedgroups"
+      },
+      {
+        "name": "addListener",
+        "signature": "(events: 'receive', functions: (params: { socketId: number; buffer: string; }) => void) => PluginListenerHandle",
+        "parameters": [
+          {
+            "name": "events",
+            "docs": "",
+            "type": "\"receive\""
+          },
+          {
+            "name": "functions",
+            "docs": "",
+            "type": "(params: { socketId: number; buffer: string; }) => void"
+          }
+        ],
+        "returns": "PluginListenerHandle",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "PluginListenerHandle"
+        ],
+        "slug": "addlistener"
+      },
+      {
+        "name": "addListener",
+        "signature": "(events: 'receiveError', functions: (params: string) => void) => PluginListenerHandle",
+        "parameters": [
+          {
+            "name": "events",
+            "docs": "",
+            "type": "\"receiveError\""
+          },
+          {
+            "name": "functions",
+            "docs": "",
+            "type": "(params: string) => void"
+          }
+        ],
+        "returns": "PluginListenerHandle",
+        "tags": [],
+        "docs": "",
+        "complexTypes": [
+          "PluginListenerHandle"
+        ],
+        "slug": "addlistener"
+      }
+    ],
+    "properties": []
+  },
+  "interfaces": [
+    {
+      "name": "PluginListenerHandle",
+      "slug": "pluginlistenerhandle",
+      "docs": "",
+      "tags": [],
+      "methods": [],
+      "properties": [
+        {
+          "name": "remove",
+          "tags": [],
+          "docs": "",
+          "complexTypes": [],
+          "type": "() => Promise<void>"
+        }
+      ]
+    }
+  ],
+  "enums": []
+}

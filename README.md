@@ -39,14 +39,14 @@ npx cap sync
 ### create(...)
 
 ```typescript
-create(options?: { properties?: { name?: string | undefined; bufferSize?: number | undefined; } | undefined; } | undefined) => any
+create(options?: { properties?: { name?: string | undefined; bufferSize?: number | undefined; } | undefined; } | undefined) => Promise<{ socketId: number; ipv4: string; ipv6: string; }>
 ```
 
 | Param         | Type                                                                   |
 | ------------- | ---------------------------------------------------------------------- |
 | **`options`** | <code>{ properties?: { name?: string; bufferSize?: number; }; }</code> |
 
-**Returns:** <code>any</code>
+**Returns:** <code>Promise&lt;{ socketId: number; ipv4: string; ipv6: string; }&gt;</code>
 
 --------------------
 
@@ -54,14 +54,14 @@ create(options?: { properties?: { name?: string | undefined; bufferSize?: number
 ### update(...)
 
 ```typescript
-update(options: { socketId: number; properties: { name?: string; bufferSize?: number; }; }) => any
+update(options: { socketId: number; properties: { name?: string; bufferSize?: number; }; }) => Promise<any>
 ```
 
 | Param         | Type                                                                                    |
 | ------------- | --------------------------------------------------------------------------------------- |
 | **`options`** | <code>{ socketId: number; properties: { name?: string; bufferSize?: number; }; }</code> |
 
-**Returns:** <code>any</code>
+**Returns:** <code>Promise&lt;any&gt;</code>
 
 --------------------
 
@@ -69,14 +69,14 @@ update(options: { socketId: number; properties: { name?: string; bufferSize?: nu
 ### setPaused(...)
 
 ```typescript
-setPaused(options: { socketId: number; paused: boolean; }) => any
+setPaused(options: { socketId: number; paused: boolean; }) => Promise<any>
 ```
 
 | Param         | Type                                                |
 | ------------- | --------------------------------------------------- |
 | **`options`** | <code>{ socketId: number; paused: boolean; }</code> |
 
-**Returns:** <code>any</code>
+**Returns:** <code>Promise&lt;any&gt;</code>
 
 --------------------
 
@@ -84,14 +84,14 @@ setPaused(options: { socketId: number; paused: boolean; }) => any
 ### bind(...)
 
 ```typescript
-bind(options: { socketId: number; address: string; port: number; }) => any
+bind(options: { socketId: number; address: string; port: number; }) => Promise<any>
 ```
 
 | Param         | Type                                                              |
 | ------------- | ----------------------------------------------------------------- |
 | **`options`** | <code>{ socketId: number; address: string; port: number; }</code> |
 
-**Returns:** <code>any</code>
+**Returns:** <code>Promise&lt;any&gt;</code>
 
 --------------------
 
@@ -99,14 +99,14 @@ bind(options: { socketId: number; address: string; port: number; }) => any
 ### send(...)
 
 ```typescript
-send(options: { socketId: number; address: string; port: number; buffer: string; }) => any
+send(options: { socketId: number; address: string; port: number; buffer: string; }) => Promise<any>
 ```
 
 | Param         | Type                                                                              |
 | ------------- | --------------------------------------------------------------------------------- |
 | **`options`** | <code>{ socketId: number; address: string; port: number; buffer: string; }</code> |
 
-**Returns:** <code>any</code>
+**Returns:** <code>Promise&lt;any&gt;</code>
 
 --------------------
 
@@ -114,10 +114,10 @@ send(options: { socketId: number; address: string; port: number; buffer: string;
 ### closeAllSockets()
 
 ```typescript
-closeAllSockets() => any
+closeAllSockets() => Promise<any>
 ```
 
-**Returns:** <code>any</code>
+**Returns:** <code>Promise&lt;any&gt;</code>
 
 --------------------
 
@@ -125,14 +125,14 @@ closeAllSockets() => any
 ### close(...)
 
 ```typescript
-close(options: { socketId: number; }) => any
+close(options: { socketId: number; }) => Promise<any>
 ```
 
 | Param         | Type                               |
 | ------------- | ---------------------------------- |
 | **`options`** | <code>{ socketId: number; }</code> |
 
-**Returns:** <code>any</code>
+**Returns:** <code>Promise&lt;any&gt;</code>
 
 --------------------
 
@@ -140,14 +140,14 @@ close(options: { socketId: number; }) => any
 ### getInfo(...)
 
 ```typescript
-getInfo(options: { socketId: number; }) => any
+getInfo(options: { socketId: number; }) => Promise<{ socketId: number; bufferSize: number; name: string | null; paused: boolean; localAddress?: string; localPort?: number; }>
 ```
 
 | Param         | Type                               |
 | ------------- | ---------------------------------- |
 | **`options`** | <code>{ socketId: number; }</code> |
 
-**Returns:** <code>any</code>
+**Returns:** <code>Promise&lt;{ socketId: number; bufferSize: number; name: string | null; paused: boolean; localAddress?: string; localPort?: number; }&gt;</code>
 
 --------------------
 
@@ -155,10 +155,10 @@ getInfo(options: { socketId: number; }) => any
 ### getSockets()
 
 ```typescript
-getSockets() => any
+getSockets() => Promise<{ sockets: [ { socketId: number; bufferSize: number; name: string | null; paused: boolean; localAddress?: string; localPort?: number; } ]; }>
 ```
 
-**Returns:** <code>any</code>
+**Returns:** <code>Promise&lt;{ sockets: [{ socketId: number; bufferSize: number; name: string | null; paused: boolean; localAddress?: string; localPort?: number; }]; }&gt;</code>
 
 --------------------
 
@@ -166,14 +166,14 @@ getSockets() => any
 ### joinGroup(...)
 
 ```typescript
-joinGroup(options: { socketId: number; address: string; }) => any
+joinGroup(options: { socketId: number; address: string; }) => Promise<any>
 ```
 
 | Param         | Type                                                |
 | ------------- | --------------------------------------------------- |
 | **`options`** | <code>{ socketId: number; address: string; }</code> |
 
-**Returns:** <code>any</code>
+**Returns:** <code>Promise&lt;any&gt;</code>
 
 --------------------
 
@@ -181,14 +181,14 @@ joinGroup(options: { socketId: number; address: string; }) => any
 ### leaveGroup(...)
 
 ```typescript
-leaveGroup(options: { socketId: number; address: string; }) => any
+leaveGroup(options: { socketId: number; address: string; }) => Promise<any>
 ```
 
 | Param         | Type                                                |
 | ------------- | --------------------------------------------------- |
 | **`options`** | <code>{ socketId: number; address: string; }</code> |
 
-**Returns:** <code>any</code>
+**Returns:** <code>Promise&lt;any&gt;</code>
 
 --------------------
 
@@ -196,14 +196,14 @@ leaveGroup(options: { socketId: number; address: string; }) => any
 ### setMulticastTimeToLive(...)
 
 ```typescript
-setMulticastTimeToLive(options: { socketId: number; ttl: number; }) => any
+setMulticastTimeToLive(options: { socketId: number; ttl: number; }) => Promise<any>
 ```
 
 | Param         | Type                                            |
 | ------------- | ----------------------------------------------- |
 | **`options`** | <code>{ socketId: number; ttl: number; }</code> |
 
-**Returns:** <code>any</code>
+**Returns:** <code>Promise&lt;any&gt;</code>
 
 --------------------
 
@@ -211,14 +211,14 @@ setMulticastTimeToLive(options: { socketId: number; ttl: number; }) => any
 ### setBroadcast(...)
 
 ```typescript
-setBroadcast(options: { socketId: number; enabled: boolean; }) => any
+setBroadcast(options: { socketId: number; enabled: boolean; }) => Promise<any>
 ```
 
 | Param         | Type                                                 |
 | ------------- | ---------------------------------------------------- |
 | **`options`** | <code>{ socketId: number; enabled: boolean; }</code> |
 
-**Returns:** <code>any</code>
+**Returns:** <code>Promise&lt;any&gt;</code>
 
 --------------------
 
@@ -226,14 +226,14 @@ setBroadcast(options: { socketId: number; enabled: boolean; }) => any
 ### setMulticastLoopbackMode(...)
 
 ```typescript
-setMulticastLoopbackMode(options: { socketId: number; enabled: boolean; }) => any
+setMulticastLoopbackMode(options: { socketId: number; enabled: boolean; }) => Promise<any>
 ```
 
 | Param         | Type                                                 |
 | ------------- | ---------------------------------------------------- |
 | **`options`** | <code>{ socketId: number; enabled: boolean; }</code> |
 
-**Returns:** <code>any</code>
+**Returns:** <code>Promise&lt;any&gt;</code>
 
 --------------------
 
@@ -241,10 +241,10 @@ setMulticastLoopbackMode(options: { socketId: number; enabled: boolean; }) => an
 ### getJoinedGroups()
 
 ```typescript
-getJoinedGroups() => any
+getJoinedGroups() => Promise<{ groups: [string]; }>
 ```
 
-**Returns:** <code>any</code>
+**Returns:** <code>Promise&lt;{ groups: [string]; }&gt;</code>
 
 --------------------
 
@@ -286,8 +286,8 @@ addListener(events: 'receiveError', functions: (params: string) => void) => Plug
 
 #### PluginListenerHandle
 
-| Prop         | Type                      |
-| ------------ | ------------------------- |
-| **`remove`** | <code>() =&gt; any</code> |
+| Prop         | Type                                      |
+| ------------ | ----------------------------------------- |
+| **`remove`** | <code>() =&gt; Promise&lt;void&gt;</code> |
 
 </docgen-api>
