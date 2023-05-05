@@ -1,6 +1,6 @@
 {
   "name": "@you-art/capacitor-udp",
-  "version": "0.3.52",
+  "version": "0.5.0",
   "private": false,
   "description": "UDP Plugin for CapacitorJS inspired by the UDP Plugin of https://github.com/unitree-czk/capacitor-udp",
   "main": "dist/plugin.cjs.js",
@@ -46,10 +46,9 @@
     "publish": "npm publish --access public"
   },
   "devDependencies": {
-    "@capacitor/android": "^4.3.0",
-    "@capacitor/core": "^4.3.0",
-    "@capacitor/docgen": "^0.0.10",
-    "@capacitor/ios": "^4.3.0",
+    "@capacitor/android": "^5.0.0",
+    "@capacitor/core": "^5.0.0",
+    "@capacitor/ios": "^5.0.0",
     "@ionic/eslint-config": "^0.3.0",
     "@ionic/prettier-config": "^1.0.1",
     "@ionic/swiftlint-config": "^1.1.2",
@@ -76,5 +75,8 @@
     "android": {
       "src": "android"
     }
+  },
+  "dependencies": {
+    "@capacitor/docgen": "^0.2.1"
   }
 }
