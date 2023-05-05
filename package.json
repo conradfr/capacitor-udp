@@ -1,6 +1,6 @@
 {
-  "name": "@frontall/capacitor-udp",
-  "version": "0.3.5",
+  "name": "@you-art/capacitor-udp",
+  "version": "0.5.0",
   "private": false,
   "description": "UDP Plugin for CapacitorJS inspired by the UDP Plugin of https://github.com/unitree-czk/capacitor-udp",
   "main": "dist/plugin.cjs.js",
@@ -12,7 +12,7 @@
     "android/build.gradle",
     "dist/",
     "ios/Plugin/",
-    "FrontallCapacitorUdp.podspec"
+    "YouArtCapacitorUdp.podspec"
   ],
   "author": "Lieuwe van Brug",
   "license": "MIT",
@@ -46,10 +46,9 @@
     "publish": "npm publish --access public"
   },
   "devDependencies": {
-    "@capacitor/android": "^3.0.0",
-    "@capacitor/core": "^3.0.0",
-    "@capacitor/docgen": "^0.0.10",
-    "@capacitor/ios": "^3.0.0",
+    "@capacitor/android": "5.0.0",
+    "@capacitor/core": "5.0.0",
+    "@capacitor/ios": "5.0.0",
     "@ionic/eslint-config": "^0.3.0",
     "@ionic/prettier-config": "^1.0.1",
     "@ionic/swiftlint-config": "^1.1.2",
@@ -62,7 +61,7 @@
     "typescript": "~4.0.3"
   },
   "peerDependencies": {
-    "@capacitor/core": "^3.0.0"
+    "@capacitor/core": "^4.3.0"
   },
   "prettier": "@ionic/prettier-config",
   "swiftlint": "@ionic/swiftlint-config",
@@ -76,5 +75,8 @@
     "android": {
       "src": "android"
     }
+  },
+  "dependencies": {
+    "@capacitor/docgen": "^0.2.1"
   }
 }
