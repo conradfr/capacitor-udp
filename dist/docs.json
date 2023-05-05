@@ -234,7 +234,7 @@
           {
             "name": "events",
             "docs": "",
-            "type": "\"receive\""
+            "type": "'receive'"
           },
           {
             "name": "functions",
@@ -248,7 +248,7 @@
         "complexTypes": [
           "PluginListenerHandle"
         ],
-        "slug": "addlistener"
+        "slug": "addlistenerreceive"
       },
       {
         "name": "addListener",
@@ -257,7 +257,7 @@
           {
             "name": "events",
             "docs": "",
-            "type": "\"receiveError\""
+            "type": "'receiveError'"
           },
           {
             "name": "functions",
@@ -271,7 +271,7 @@
         "complexTypes": [
           "PluginListenerHandle"
         ],
-        "slug": "addlistener"
+        "slug": "addlistenerreceiveerror"
       }
     ],
     "properties": []
@@ -294,5 +294,7 @@
       ]
     }
   ],
-  "enums": []
+  "enums": [],
+  "typeAliases": [],
+  "pluginConfigs": []
 }

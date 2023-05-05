@@ -27,8 +27,8 @@ npx cap sync
 * [`setBroadcast(...)`](#setbroadcast)
 * [`setMulticastLoopbackMode(...)`](#setmulticastloopbackmode)
 * [`getJoinedGroups()`](#getjoinedgroups)
-* [`addListener(...)`](#addlistener)
-* [`addListener(...)`](#addlistener)
+* [`addListener('receive', ...)`](#addlistenerreceive)
+* [`addListener('receiveError', ...)`](#addlistenerreceiveerror)
 * [Interfaces](#interfaces)
 
 </docgen-index>
@@ -249,7 +249,7 @@ getJoinedGroups() => Promise<{ groups: [string]; }>
 --------------------
 
 
-### addListener(...)
+### addListener('receive', ...)
 
 ```typescript
 addListener(events: 'receive', functions: (params: { socketId: number; buffer: string; }) => void) => PluginListenerHandle
@@ -257,7 +257,7 @@ addListener(events: 'receive', functions: (params: { socketId: number; buffer: s
 
 | Param           | Type                                                                    |
 | --------------- | ----------------------------------------------------------------------- |
-| **`events`**    | <code>"receive"</code>                                                  |
+| **`events`**    | <code>'receive'</code>                                                  |
 | **`functions`** | <code>(params: { socketId: number; buffer: string; }) =&gt; void</code> |
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
@@ -265,7 +265,7 @@ addListener(events: 'receive', functions: (params: { socketId: number; buffer: s
 --------------------
 
 
-### addListener(...)
+### addListener('receiveError', ...)
 
 ```typescript
 addListener(events: 'receiveError', functions: (params: string) => void) => PluginListenerHandle
@@ -273,7 +273,7 @@ addListener(events: 'receiveError', functions: (params: string) => void) => Plug
 
 | Param           | Type                                     |
 | --------------- | ---------------------------------------- |
-| **`events`**    | <code>"receiveError"</code>              |
+| **`events`**    | <code>'receiveError'</code>              |
 | **`functions`** | <code>(params: string) =&gt; void</code> |
 
 **Returns:** <code><a href="#pluginlistenerhandle">PluginListenerHandle</a></code>
