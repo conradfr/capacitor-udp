@@ -555,7 +555,7 @@ public class UDPPlugin extends Plugin {
 
             isBound = false;
 
-            setProperties(properties);
+            if (properties != null) setProperties(properties);
             setBufferSize();
         }
 
