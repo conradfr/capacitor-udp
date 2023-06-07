@@ -310,6 +310,7 @@ public class UDPPlugin extends Plugin {
         try {
             error.put("message", message);
             error.put("resultCode", code);
+            Log.e("Receive Error", message + ", code: " + code);
             notifyListeners("receiveError", error, false);
         } catch (Exception e) {}
     }
@@ -319,7 +320,7 @@ public class UDPPlugin extends Plugin {
     // to decode the receive event correctly. Alternatively, we can send Multipart
     // messages.
     private synchronized void sendReceiveEvent(byte[] data, int socketId, String address, int port) {
-        JSObject ret = new JSObject();
+        netscape.javascript.JSObject ret = new JSObject();
         try {
             ret.put("socketId", socketId);
             int ip6InterfaceIndex = address.indexOf("%");
@@ -331,6 +332,7 @@ public class UDPPlugin extends Plugin {
             ret.put("remotePort", port);
             String bufferString = new String(Base64.encode(data, Base64.DEFAULT));
             ret.put("buffer", bufferString);
+            Log.d("Received", bufferString + ", from :" + ret.getMember("remoteAddress"));
             notifyListeners("receive", ret, false);
         } catch (Exception e) {}
     }
