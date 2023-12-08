@@ -78,6 +78,13 @@ export interface UDPPlugin {
 
   addListener(
     events: 'receiveError',
-    functions: (params: string) => void,
+    functions: (params: UdpReceiveError) => void,
   ): PluginListenerHandle;
 }
+
+
+
+export type UdpReceiveError = {
+  code: number;
+  message: string;
+};

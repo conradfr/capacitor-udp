@@ -332,7 +332,7 @@ public class UDPPlugin extends Plugin {
             ret.put("remotePort", port);
             String bufferString = new String(Base64.encode(data, Base64.DEFAULT));
             ret.put("buffer", bufferString);
-            Log.d("Received", bufferString + ", from :" + ret.getMember("remoteAddress"));
+            //Log.d("Received", bufferString + ", from :" + ret.getMember("remoteAddress"));
             notifyListeners("receive", ret, false);
         } catch (Exception e) {}
     }
