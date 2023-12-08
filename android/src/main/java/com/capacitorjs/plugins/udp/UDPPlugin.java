@@ -320,7 +320,7 @@ public class UDPPlugin extends Plugin {
     // to decode the receive event correctly. Alternatively, we can send Multipart
     // messages.
     private synchronized void sendReceiveEvent(byte[] data, int socketId, String address, int port) {
-        netscape.javascript.JSObject ret = new JSObject();
+        JSObject ret = new JSObject();
         try {
             ret.put("socketId", socketId);
             int ip6InterfaceIndex = address.indexOf("%");
