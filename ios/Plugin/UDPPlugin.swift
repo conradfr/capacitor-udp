@@ -40,7 +40,7 @@ public class UDPPlugin: CAPPlugin {
         sockets[socket.socketId] = socket
         try? socket.socket?.enableReusePort(true)
 
-        call.resolve(["socketId": socket.socketId, "ipv4": socket.getIPv4Address() as Any, "ipv6": socket.getIPv6Address() as Any ])
+        call.resolve(["socketId": socket.socketId, "ipv4": socket.getIPv4Address() as Any)
     }
 
     @objc func update(_ call: CAPPluginCall) {
@@ -235,12 +235,14 @@ public class UDPPlugin: CAPPlugin {
                     call.reject("ttl ipv4 error")
                 }
             }
+            /*
             if socket?.socket?.isIPv6() ?? false {
                 var ttlCpy = ttl
                 if  setsockopt(socket?.socket?.socket6FD() ?? 0, IPPROTO_IPV6, IP_MULTICAST_TTL, &ttlCpy, UInt32( MemoryLayout.size(ofValue: ttlCpy)) )<0 {
                     call.reject("ttl ipv6 error")
                 }
             }
+            */
             call.resolve()
         })
     }
@@ -261,12 +263,14 @@ public class UDPPlugin: CAPPlugin {
                     call.reject("loopback ipv4 error")
                 }
             }
+            /*
             if socket?.socket?.isIPv6() ?? false {
                 var loop: Int32 = (enabled ?? false) ? 1 : 0
                 if  setsockopt(socket?.socket?.socket6FD() ?? 0, IPPROTO_IPV6, IP_MULTICAST_LOOP, &loop, UInt32( MemoryLayout.size(ofValue: loop)) )<0 {
                     call.reject("loopback ipv6 error")
                 }
             }
+            */
             call.resolve()
         })
     }
@@ -334,6 +338,7 @@ public class UDPPlugin: CAPPlugin {
                     socket?.setMaxReceiveIPv4BufferSize(bufferSize.uint16Value)
                 }
             }
+            /*
             if socket?.isIPv6() ?? false {
                 if bufferSize.intValue > UINT32_MAX {
                     socket?.setMaxReceiveIPv6BufferSize(UInt32.max)
@@ -341,6 +346,7 @@ public class UDPPlugin: CAPPlugin {
                     socket?.setMaxReceiveIPv6BufferSize(bufferSize.uint32Value)
                 }
             }
+            */
         }
 
         func setPaused(_ paused: Bool) {
