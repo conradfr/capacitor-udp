@@ -40,7 +40,7 @@ public class UDPPlugin: CAPPlugin {
         sockets[socket.socketId] = socket
         try? socket.socket?.enableReusePort(true)
 
-        call.resolve(["socketId": socket.socketId, "ipv4": socket.getIPv4Address() as Any)
+        call.resolve(["socketId": socket.socketId, "ipv4": socket.getIPv4Address() as Any])
     }
 
     @objc func update(_ call: CAPPluginCall) {
