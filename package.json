@@ -1,6 +1,6 @@
 {
   "name": "@you-art/capacitor-udp",
-  "version": "0.5.34",
+  "version": "0.5.35",
   "private": false,
   "description": "UDP Plugin for CapacitorJS inspired by the UDP Plugin of https://github.com/unitree-czk/capacitor-udp",
   "main": "dist/plugin.cjs.js",
