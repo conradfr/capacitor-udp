@@ -12,7 +12,7 @@
     "android/build.gradle",
     "dist/",
     "ios/Plugin/",
-    "YouArtCapacitorUdp.podspec"
+    "CapacitorUdp.podspec"
   ],
   "author": "Lieuwe van Brug",
   "license": "MIT",
